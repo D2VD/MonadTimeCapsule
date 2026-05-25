@@ -10,7 +10,7 @@ contract MonadTimeCapsule {
     }
 
     address public owner;
-    uint256 public creationFee = 0.01 ether;
+    uint256 public creationFee = 0 ether;
     uint256 public constant maxMessageLength = 500;
     Capsule[] private capsules;
 

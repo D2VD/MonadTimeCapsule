@@ -2,6 +2,8 @@
 
 Write now. Open later. Forever on Monad.
 
+Current app fee: `0 MON` (users only pay network gas).
+
 ## Stack
 - Next.js + TypeScript + Tailwind CSS
 - wagmi + viem + RainbowKit

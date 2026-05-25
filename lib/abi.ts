@@ -1,90 +1,81 @@
 export const monadTimeCapsuleAbi = [
+  { inputs: [], stateMutability: 'nonpayable', type: 'constructor' },
   {
-    type: 'constructor',
-    inputs: []
-  },
-  {
-    type: 'event',
+    anonymous: false,
+    inputs: [
+      { indexed: true, internalType: 'uint256', name: 'id', type: 'uint256' },
+      { indexed: true, internalType: 'address', name: 'author', type: 'address' },
+      { indexed: false, internalType: 'uint256', name: 'unlockAt', type: 'uint256' },
+      { indexed: false, internalType: 'uint256', name: 'amountPaid', type: 'uint256' }
+    ],
     name: 'CapsuleCreated',
+    type: 'event'
+  },
+  {
     inputs: [
-      { indexed: true, name: 'id', type: 'uint256' },
-      { indexed: true, name: 'author', type: 'address' },
-      { indexed: false, name: 'unlockAt', type: 'uint256' },
-      { indexed: false, name: 'amountPaid', type: 'uint256' }
+      { internalType: 'string', name: 'message', type: 'string' },
+      { internalType: 'uint256', name: 'unlockAt', type: 'uint256' }
     ],
-    anonymous: false
-  },
-  {
-    type: 'function',
-    stateMutability: 'nonpayable',
-    name: 'creationFee',
-    inputs: [],
-    outputs: [{ name: '', type: 'uint256' }]
-  },
-  {
-    type: 'function',
-    stateMutability: 'payable',
     name: 'createCapsule',
-    inputs: [
-      { name: 'message', type: 'string' },
-      { name: 'unlockAt', type: 'uint256' }
-    ],
-    outputs: []
+    outputs: [],
+    stateMutability: 'payable',
+    type: 'function'
   },
   {
-    type: 'function',
-    stateMutability: 'view',
-    name: 'getCapsule',
-    inputs: [{ name: 'id', type: 'uint256' }],
-    outputs: [
-      { name: 'author', type: 'address' },
-      { name: 'message', type: 'string' },
-      { name: 'createdAt', type: 'uint256' },
-      { name: 'unlockAt', type: 'uint256' },
-      { name: 'amountPaid', type: 'uint256' },
-      { name: 'isUnlocked', type: 'bool' }
-    ]
-  },
-  {
-    type: 'function',
-    stateMutability: 'view',
-    name: 'getCapsuleCount',
-    inputs: [],
-    outputs: [{ name: '', type: 'uint256' }]
-  },
-  {
-    type: 'function',
-    stateMutability: 'view',
-    name: 'maxMessageLength',
-    inputs: [],
-    outputs: [{ name: '', type: 'uint256' }]
-  },
-  {
-    type: 'function',
-    stateMutability: 'view',
-    name: 'owner',
-    inputs: [],
-    outputs: [{ name: '', type: 'address' }]
-  },
-  {
-    type: 'function',
-    stateMutability: 'nonpayable',
+    inputs: [{ internalType: 'uint256', name: 'newFee', type: 'uint256' }],
     name: 'setCreationFee',
-    inputs: [{ name: 'newFee', type: 'uint256' }],
-    outputs: []
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function'
   },
   {
-    type: 'function',
-    stateMutability: 'nonpayable',
+    inputs: [{ internalType: 'address', name: 'newOwner', type: 'address' }],
     name: 'transferOwnership',
-    inputs: [{ name: 'newOwner', type: 'address' }],
-    outputs: []
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function'
+  },
+  { inputs: [], name: 'withdraw', outputs: [], stateMutability: 'nonpayable', type: 'function' },
+  {
+    inputs: [],
+    name: 'creationFee',
+    outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
+    stateMutability: 'view',
+    type: 'function'
   },
   {
-    type: 'function',
-    stateMutability: 'nonpayable',
-    name: 'withdraw',
+    inputs: [{ internalType: 'uint256', name: 'id', type: 'uint256' }],
+    name: 'getCapsule',
+    outputs: [
+      { internalType: 'address', name: 'author', type: 'address' },
+      { internalType: 'string', name: 'message', type: 'string' },
+      { internalType: 'uint256', name: 'createdAt', type: 'uint256' },
+      { internalType: 'uint256', name: 'unlockAt', type: 'uint256' },
+      { internalType: 'uint256', name: 'amountPaid', type: 'uint256' },
+      { internalType: 'bool', name: 'isUnlocked', type: 'bool' }
+    ],
+    stateMutability: 'view',
+    type: 'function'
+  },
+  {
     inputs: [],
-    outputs: []
+    name: 'getCapsuleCount',
+    outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
+    stateMutability: 'view',
+    type: 'function'
+  },
+  {
+    inputs: [],
+    name: 'maxMessageLength',
+    outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
+    stateMutability: 'view',
+    type: 'function'
+  },
+  {
+    inputs: [],
+    name: 'owner',
+    outputs: [{ internalType: 'address', name: '', type: 'address' }],
+    stateMutability: 'view',
+    type: 'function'
   }
 ] as const;
