@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gradient-to-b from-black via-[#12051d] to-black text-white min-h-screen;
+}
+
+.card {
+  @apply rounded-2xl border border-monad-400/30 bg-black/40 backdrop-blur p-6 shadow-glow;
+}
